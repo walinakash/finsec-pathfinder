@@ -8,6 +8,7 @@ import {
   ArrowRight,
   CheckCircle
 } from "lucide-react";
+import React, { useState } from "react";
 
 const educationTopics = [
   {
@@ -68,7 +69,128 @@ const educationTopics = [
   },
 ];
 
+const quizQuestions = [
+  {
+    question: "What is the safest way to create a password?",
+    options: ["Use your birthdate", "Use a mix of letters, numbers, and symbols"],
+    answer: 1,
+  },
+  {
+    question: "What should you do if you receive a suspicious email?",
+    options: ["Click the link to see what it is", "Delete or report it"],
+    answer: 1,
+  },
+  {
+    question: "Which network is safest for online banking?",
+    options: ["Public Wi-Fi", "Home Wi-Fi"],
+    answer: 1,
+  },
+  {
+    question: "What is phishing?",
+    options: ["A cyber attack using fake messages", "A way to speed up your computer"],
+    answer: 0,
+  },
+  {
+    question: "Should you share your passwords with friends?",
+    options: ["Yes", "No"],
+    answer: 1,
+  },
+  {
+    question: "What is two-factor authentication?",
+    options: ["A single password", "A second step to verify your identity"],
+    answer: 1,
+  },
+  {
+    question: "What should you do before downloading an app?",
+    options: ["Check if it's from an official store", "Download from any website"],
+    answer: 0,
+  },
+  {
+    question: "How often should you update your passwords?",
+    options: ["Never", "Regularly"],
+    answer: 1,
+  },
+  {
+    question: "What is a password manager?",
+    options: ["A tool to store passwords securely", "A type of virus"],
+    answer: 0,
+  },
+  {
+    question: "What should you do if you suspect a data breach?",
+    options: ["Ignore it", "Change your passwords and notify your bank"],
+    answer: 1,
+  },
+];
+
+function QuizModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [current, setCurrent] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+  const [resultMsg, setResultMsg] = useState("");
+
+  const handleOptionClick = (idx: number) => {
+    if (idx === quizQuestions[current].answer) {
+      setResultMsg("👏 Correct! Well done!");
+      setShowResult(true);
+      setTimeout(() => {
+        setShowResult(false);
+        setResultMsg("");
+        setCurrent((prev) => prev + 1);
+      }, 1200);
+    } else {
+      setResultMsg("❌ Wrong answer, try again.");
+      setShowResult(true);
+      setTimeout(() => setShowResult(false), 1200);
+    }
+  };
+
+  const handleClose = () => {
+    setCurrent(0);
+    setShowResult(false);
+    setResultMsg("");
+    onClose();
+  };
+
+  return open ? (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div className="bg-background rounded-lg shadow-lg p-8 max-w-md w-full relative">
+        <button className="absolute top-2 right-2 text-xl" onClick={handleClose}>&times;</button>
+        {current < quizQuestions.length ? (
+          <>
+            <h2 className="text-xl font-bold mb-4">Cybersecurity Quiz</h2>
+            <p className="mb-6 text-lg">{quizQuestions[current].question}</p>
+            <div className="space-y-4">
+              {quizQuestions[current].options.map((opt, idx) => (
+                <button
+                  key={idx}
+                  className="w-full px-4 py-2 rounded bg-gradient-cyber text-primary-foreground font-semibold hover:scale-105 transition-transform"
+                  onClick={() => handleOptionClick(idx)}
+                  disabled={showResult}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+            {showResult && (
+              <div className="mt-6 text-center text-lg font-bold">
+                {resultMsg}
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-4">🎉 Quiz Complete!</h2>
+            <p className="mb-6">You finished all questions. Great job!</p>
+            <button className="px-6 py-2 bg-primary text-white rounded" onClick={handleClose}>Close</button>
+          </div>
+        )}
+      </div>
+    </div>
+  ) : null;
+}
+
 const EducationSection = () => {
+  const [quizOpen, setQuizOpen] = useState(false);
+
   return (
     <section className="py-20 bg-gradient-dark">
       <div className="container mx-auto px-4">
@@ -138,13 +260,17 @@ const EducationSection = () => {
                 through our comprehensive training programs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-6 py-3 bg-gradient-cyber text-primary-foreground rounded-lg font-semibold hover:shadow-glow-cyber transition-all duration-300">
-                  Start Free Course
+                <button
+                  className="px-6 py-3 bg-gradient-cyber text-primary-foreground rounded-lg font-semibold hover:shadow-glow-cyber transition-all duration-300"
+                  onClick={() => setQuizOpen(true)}
+                >
+                  Test Your Knowledge
                 </button>
                 <button className="px-6 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
                   Download Guide
                 </button>
               </div>
+              <QuizModal open={quizOpen} onClose={() => setQuizOpen(false)} />
             </CardContent>
           </Card>
         </div>
