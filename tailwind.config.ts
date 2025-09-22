@@ -57,6 +57,27 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Cyber theme colors
+        cyber: {
+          blue: "hsl(var(--cyber-blue))",
+          purple: "hsl(var(--cyber-purple))",
+          green: "hsl(var(--cyber-green))",
+          dark: "hsl(var(--cyber-dark))",
+          surface: "hsl(var(--cyber-surface))",
+          "surface-hover": "hsl(var(--cyber-surface-hover))",
+        },
+      },
+      backgroundImage: {
+        "gradient-cyber": "var(--gradient-cyber)",
+        "gradient-dark": "var(--gradient-dark)",
+        "gradient-card": "var(--gradient-card)",
+      },
+      boxShadow: {
+        "glow-cyber": "var(--glow-cyber)",
+        "glow-purple": "var(--glow-purple)",
+      },
+      transitionTimingFunction: {
+        "cyber": "var(--transition-cyber)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +101,32 @@ export default {
             height: "0",
           },
         },
+        "fade-in": {
+          from: {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "slide-up": {
+          from: {
+            opacity: "0",
+            transform: "translateY(40px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.8s ease-out",
+        "slide-up": "slide-up 0.6s ease-out",
       },
     },
   },
