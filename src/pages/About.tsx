@@ -37,7 +37,7 @@ const values = [
 
 const team = [
   {
-    name: "Sarah Chen",
+    name: "Muhammad Kabir Ahmad",
     role: "Chief Security Officer",
     bio: "15+ years in cybersecurity with expertise in enterprise security architecture and threat intelligence."
   },

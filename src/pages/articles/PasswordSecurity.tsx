@@ -4,6 +4,105 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Calendar, User, Shield, Key, Eye, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
 import authorSarah from "@/assets/author-sarah.jpg";
+import React from "react";
+
+// Password strength evaluation logic
+function evaluatePassword(password: string) {
+  const minLength = 12;
+  const hasUpper = /[A-Z]/.test(password);
+  const hasLower = /[a-z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  const hasSymbol = /[^A-Za-z0-9]/.test(password);
+  const isLongEnough = password.length >= minLength;
+  const isNotDictionary = !/password|123456|qwerty|letmein|admin|welcome/i.test(password);
+  const isStrong = isLongEnough && hasUpper && hasLower && hasNumber && hasSymbol && isNotDictionary;
+  return {
+    isStrong,
+    reasons: [
+      !isLongEnough && "Password should be at least 12 characters.",
+      !hasUpper && "Add uppercase letters.",
+      !hasLower && "Add lowercase letters.",
+      !hasNumber && "Include numbers.",
+      !hasSymbol && "Include symbols.",
+      !isNotDictionary && "Avoid common words or patterns."
+    ].filter(Boolean)
+  };
+}
+
+// PasswordStrengthTester component
+export function PasswordStrengthTester() {
+  const [passwords, setPasswords] = React.useState([""]);
+  const [results, setResults] = React.useState<(null | {isStrong: boolean, reasons: string[]})[]>([null]);
+
+  const handleChange = (idx: number, value: string) => {
+    const updated = [...passwords];
+    updated[idx] = value;
+    setPasswords(updated);
+  };
+
+  const addField = () => {
+    setPasswords([...passwords, ""]);
+    setResults([...results, null]);
+  };
+
+  const testPasswords = () => {
+    setResults(passwords.map(evaluatePassword));
+  };
+
+  return (
+    <div>
+      <div className="space-y-4 mb-6">
+        {passwords.map((pw, idx) => (
+          <div key={idx} className="flex items-center gap-2">
+            <input
+              type="password"
+              value={pw}
+              onChange={e => handleChange(idx, e.target.value)}
+              placeholder={`Enter password #${idx + 1}`}
+              className="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-primary text-black"
+            />
+            {idx === passwords.length - 1 && (
+              <button
+                type="button"
+                onClick={addField}
+                className="bg-primary text-white px-3 py-2 rounded hover:bg-primary-glow transition-colors"
+              >+
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={testPasswords}
+        className="bg-gradient-cyber text-white px-6 py-2 rounded font-semibold shadow hover:scale-105 transition-transform"
+      >Test Passwords
+      </button>
+      <div className="mt-8 space-y-6">
+        {results.map((result, idx) =>
+          result && (
+            <div key={idx} className={`p-4 rounded border ${result.isStrong ? 'border-green-500 bg-green-50' : 'border-red-500 bg-red-50'}`}>
+              {result.isStrong ? (
+                <div>
+                  <h4 className="text-lg font-bold text-green-700 mb-2">🎉 Strong Password!</h4>
+                  <p className="text-green-700">Your password is a fortress. Great job keeping your accounts safe!</p>
+                </div>
+              ) : (
+                <div>
+                  <h4 className="text-lg font-bold text-red-700 mb-2">Weak Password</h4>
+                  <p className="text-red-700 mb-2">Here’s how to make it stronger:</p>
+                  <ul className="list-disc ml-6 text-red-700">
+                    {result.reasons.map((reason, i) => <li key={i}>{reason}</li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )
+        )}
+      </div>
+    </div>
+  );
+}
 
 const PasswordSecurity = () => {
   return (
@@ -114,6 +213,14 @@ const PasswordSecurity = () => {
                     </CardContent>
                   </Card>
                 </div>
+
+                  {/* Password Strength Tester Form */}
+                  <Card className="bg-gradient-card border-primary/30 mb-8">
+                    <CardContent className="p-8">
+                      <h3 className="text-2xl font-bold mb-4 text-primary">Test Your Password Strength</h3>
+                      <PasswordStrengthTester />
+                    </CardContent>
+                  </Card>
 
                 <Card className="bg-gradient-dark border-primary/30 mb-8">
                   <CardContent className="p-8">

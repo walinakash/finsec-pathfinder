@@ -17,6 +17,8 @@ import {
 import authorSarah from "@/assets/author-sarah.jpg";
 import authorJames from "@/assets/author-james.jpg";
 import authorMichael from "@/assets/author-michael.jpg";
+import { PasswordStrengthTester } from "@/pages/articles/PasswordSecurity";
+import React, { useState } from "react";
 
 const stats = [
   {
@@ -139,6 +141,18 @@ const Home = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </section>
+
+        {/* Password Strength Tester Section */}
+        <section className="py-8 bg-cyber-surface/10">
+          <div className="container mx-auto px-4">
+            <Card className="bg-gradient-card border-primary/30 mb-8">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Test Your Password Strength</h3>
+                <PasswordStrengthTester />
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -362,7 +376,7 @@ const Home = () => {
               </div>
             </div>
             <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-              © 2024 CyberGuard. All rights reserved.
+              © 2025 CyberGuard. All rights reserved.
             </div>
           </div>
         </footer>
