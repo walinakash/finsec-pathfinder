@@ -21,26 +21,26 @@ import { PasswordStrengthTester } from "@/pages/articles/PasswordSecurity";
 import React, { useState } from "react";
 
 const stats = [
-  {
-    icon: Users,
-    value: "50K+",
-    label: "Professionals Trained",
-  },
-  {
-    icon: Award,
-    value: "98%",
-    label: "Success Rate",
-  },
-  {
-    icon: TrendingUp,
-    value: "200%",
-    label: "Security Improvement",
-  },
-  {
-    icon: Globe,
-    value: "120+",
-    label: "Countries Served",
-  },
+  // {
+  //   icon: Users,
+  //   value: "50K+",
+  //   label: "Professionals Trained",
+  // },
+  // {
+  //   icon: Award,
+  //   value: "98%",
+  //   label: "Success Rate",
+  // },
+  // {
+  //   icon: TrendingUp,
+  //   value: "200%",
+  //   label: "Security Improvement",
+  // },
+  // {
+  //   icon: Globe,
+  //   value: "120+",
+  //   label: "Countries Served",
+  // },
 ];
 
 const Home = () => {
@@ -258,7 +258,7 @@ const Home = () => {
                 Why Choose CyberGuard
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent">
-                Industry-Leading Security Solutions
+                Industry-Leading Security Solutions Awareness
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Our comprehensive approach to cybersecurity education and protection ensures 
@@ -296,9 +296,9 @@ const Home = () => {
                   <div className="inline-flex p-4 rounded-lg bg-gradient-cyber shadow-glow-cyber mb-6 group-hover:shadow-glow-purple transition-all duration-300">
                     <Globe className="h-8 w-8 text-primary-foreground" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4">Global Recognition</h3>
+                  <h3 className="text-xl font-bold mb-4">Global Awareness</h3>
                   <p className="text-muted-foreground">
-                    Our certifications are recognized worldwide, giving you the credentials needed to advance your cybersecurity career.
+                    Your location is not a barrier, get access to our cyber security awareness, news and articles wherever you are. 
                   </p>
                 </CardContent>
               </Card>
@@ -320,9 +320,9 @@ const Home = () => {
                 Get Started Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="px-8 py-4 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
+              {/* <button className="px-8 py-4 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
                 Schedule Demo
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
@@ -366,11 +366,11 @@ const Home = () => {
                   </div>
                   <div className="flex items-center">
                     <Phone className="h-4 w-4 mr-2" />
-                    +1 (555) 123-4567
+                    +234 813 2631 222
                   </div>
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2" />
-                    San Francisco, CA
+                    Kaduna, NG
                   </div>
                 </div>
               </div>

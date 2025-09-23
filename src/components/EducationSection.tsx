@@ -253,11 +253,11 @@ const EducationSection = () => {
           <Card className="bg-gradient-card border-border/50 max-w-4xl mx-auto">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4 bg-gradient-cyber bg-clip-text text-transparent">
-                Ready to Strengthen Your Digital Security?
+                Ready to Test Your Digital Security Strength?
               </h3>
               <p className="text-muted-foreground mb-6">
-                Join thousands of professionals who have enhanced their cybersecurity knowledge 
-                through our comprehensive training programs.
+                Join thousands of users who have enhanced their Digital security knowledge.
+                Get started by clicking the Test Knowledge Button.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
@@ -266,9 +266,9 @@ const EducationSection = () => {
                 >
                   Test Your Knowledge
                 </button>
-                <button className="px-6 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
+                {/* <button className="px-6 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
                   Download Guide
-                </button>
+                </button> */}
               </div>
               <QuizModal open={quizOpen} onClose={() => setQuizOpen(false)} />
             </CardContent>

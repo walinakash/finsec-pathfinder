@@ -81,19 +81,19 @@ const HeroSlider = () => {
                     {slide.description}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-                    <Button 
+                    {/* <Button 
                       size="lg" 
                       className="bg-gradient-cyber hover:shadow-glow-cyber transition-all duration-300"
                     >
                       Start Learning
-                    </Button>
-                    <Button 
+                    </Button> */}
+                    {/* <Button 
                       variant="outline" 
                       size="lg"
                       className="border-primary/50 hover:bg-primary/10"
                     >
                       Watch Demo
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </div>

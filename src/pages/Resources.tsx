@@ -13,6 +13,7 @@ import {
   Trophy,
   Zap
 } from "lucide-react";
+import OnlineResourcesSection from "@/components/OnlineResourcesSection";
 
 const resourceCategories = [
   {
@@ -203,6 +204,9 @@ const Resources = () => {
             ))}
           </div>
         </section>
+
+        {/* Online Resources Section */}
+        <OnlineResourcesSection />
 
         {/* Upcoming Webinars */}
         <section className="py-20 bg-cyber-surface/30">
