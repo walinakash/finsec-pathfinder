@@ -21,25 +21,25 @@ const resourceCategories = [
     icon: FileText,
     resources: [
       {
-        title: "2024 Nigerian Cybersecurity Threat Landscape",
-        description: "Comprehensive analysis of emerging threats and attack vectors in Nigeria",
+        title: "African Cybersecurity & Awareness Report 2025",
+        description: "This report by KnowBe4 examines cybersecurity awareness levels across Africa, with a dedicated section on Nigeria highlighting low awareness in rural areas, phishing vulnerabilities, and recommendations for training programs.",
         type: "PDF",
-        size: "2.5 MB",
-        link: "https://www.cybersecuritynigeria.org/resources/2024-threat-landscape.pdf"
+        size: "715.4 KB",
+        link: "https://www.knowbe4.com/hubfs/Africa-Annual-Survey_Whitepaper_US_EN-F.pdf"
       },
       {
-        title: "Fintech Security Best Practices Guide (Nigeria)",
-        description: "Essential security measures for Nigerian financial technology companies",
+        title: "Cybersecurity Awareness amongst University Students: Legal Remedies",
+        description: "Published in Unity Journal, this study assesses awareness levels among Nigerian university students, revealing gaps in knowledge of cyber threats and advocating for mandatory courses and legal reforms under the Cybercrimes Act",
         type: "PDF",
-        size: "1.8 MB",
-        link: "https://www.cybersecuritynigeria.org/resources/fintech-security-guide.pdf"
+        size: "1.01 MB",
+        link: "https://www.nepjol.info/index.php/unityj/article/download/75557/57924/219256"
       },
       {
-        title: "Blockchain Security Framework for Nigeria",
-        description: "Security considerations for blockchain implementations in Nigeria",
+        title: "Cyber Security in Nigeria: Issues, Challenges and Way Forward",
+        description: "From IRJAES, this paper outlines awareness challenges amid Nigeria's digital growth, proposing solutions like NITDA-led public campaigns and school integrations to address issues like phishing and data leaks.",
         type: "PDF",
-        size: "3.2 MB",
-        link: "https://www.cybersecuritynigeria.org/resources/blockchain-security-framework.pdf"
+        size: "112 KB",
+        link: "http://irjaes.com/wp-content/uploads/2020/10/IRJAES-V3N2P959Y18.pdf"
       }
     ]
   },
@@ -48,25 +48,25 @@ const resourceCategories = [
     icon: Video,
     resources: [
       {
-        title: "Digital Banking Security Fundamentals (Nigeria)",
-        description: "Step-by-step guide to securing online banking transactions in Nigeria",
+        title: "National Blockchain Policy, Cybersecurity Awareness | Tech Trends",
+        description: "National Blockchain Policy, Cybersecurity Awareness | Tech Trends",
         type: "Video",
         duration: "25 min",
-        link: "https://www.youtube.com/watch?v=QkQwQnigerian1"
+        link: "https://youtu.be/LjNyZ5wTyQU?si=2o9it7gxLALfs0Y7"
       },
       {
-        title: "Mobile Payment Security Setup (Nigeria)",
-        description: "Configure secure mobile payment applications for Nigerians",
+        title: "Mobile Payment Security Setup What You Need to Know",
+        description: "Configure secure mobile payment applications for Safer use",
         type: "Video",
-        duration: "18 min",
-        link: "https://www.youtube.com/watch?v=QkQwQnigerian2"
+        duration: "3 min",
+        link: "https://youtu.be/hKGCKZ2z9CQ?si=i1_BZIvgxzRlgFjt"
       },
       {
-        title: "Password Manager Implementation (Nigeria)",
-        description: "Choose and deploy enterprise password management for Nigerian users",
+        title: "How to use a Password Manager (BEGINNERS GUIDE)",
+        description: "A password manager is vital in today’s current cyber-climate. Yet, they aren’t all built the same. So - let’s put how to use a password manager simply, in this Nordpass beginners guide. ",
         type: "Video",
-        duration: "32 min",
-        link: "https://www.youtube.com/watch?v=QkQwQnigerian3"
+        duration: "12 min",
+        link: "https://youtu.be/xZ-oMYpIz-E?si=Bfm4gBuT0kmByTak"
       }
     ]
   },
@@ -343,7 +343,7 @@ const Resources = () => {
               ))}
             </div>
           </div>
-        </section> */}
+        </section>*/}
       </main>
     </div>
   );

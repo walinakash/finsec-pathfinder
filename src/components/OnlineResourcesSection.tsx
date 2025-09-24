@@ -3,10 +3,10 @@ import React, { useState } from "react";
 const youtubeVideos = [
   {
     id: "1",
-    url: "https://www.youtube.com/embed/1i7pQKzQwzA", // IBM Technology - What is Cybersecurity? (embeddable)
-    title: "What is Cybersecurity?",
-    author: "IBM Technology",
-    views: "900K views"
+    url: "https://youtu.be/LjNyZ5wTyQU?si=2o9it7gxLALfs0Y7", // IBM Technology - What is Cybersecurity? (embeddable)
+    title: "National Blockchain Policy, Cybersecurity Awareness | Tech Trends",
+    author: "Channels Television",
+    views: "298K views"
   },
   {
     id: "2",

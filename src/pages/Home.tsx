@@ -286,7 +286,7 @@ const Home = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-4">Cutting-Edge Technology</h3>
                   <p className="text-muted-foreground">
-                    Stay updated with the latest security technologies, tools, and methodologies used by top organizations worldwide.
+                    Stay updated with the latest security technologies, tools, and methodologies used by top organizations in Nigeria.
                   </p>
                 </CardContent>
               </Card>
@@ -316,10 +316,10 @@ const Home = () => {
               Join the cybersecurity revolution and protect what matters most. Start your journey today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-cyber text-primary-foreground rounded-lg font-semibold hover:shadow-glow-cyber transition-all duration-300 inline-flex items-center">
+              {/* <button className="px-8 py-4 bg-gradient-cyber text-primary-foreground rounded-lg font-semibold hover:shadow-glow-cyber transition-all duration-300 inline-flex items-center">
                 Get Started Now
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
+              </button> */}
               {/* <button className="px-8 py-4 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300">
                 Schedule Demo
               </button> */}

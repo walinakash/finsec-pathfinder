@@ -26,19 +26,19 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    content: "+1 (555) 123-4567",
+    content: "++234 813 2631 222",
     description: "Speak directly with our support team"
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    content: "123 Security Ave, San Francisco, CA 94102",
+    content: "NO. 23, Garki Road, Kura, Abuja, Nigeria",
     description: "Our headquarters location"
   },
   {
     icon: Clock,
     title: "Business Hours",
-    content: "Mon-Fri: 9AM-6PM PST",
+    content: "Mon-Fri: 9AM-5PM WAT",
     description: "When our team is available"
   }
 ];
@@ -202,7 +202,7 @@ const Contact = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-background">
+        {/* <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent">
@@ -225,20 +225,11 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-card border-border/50">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-3">How long does certification take?</h3>
-                  <p className="text-muted-foreground">
-                    Certification duration varies by program. Our Fundamentals course takes 40 hours, 
-                    Specialist programs require 60 hours, and Advanced certifications need 80 hours. 
-                    All programs are self-paced with flexible scheduling.
-                  </p>
-                </CardContent>
-              </Card>
+             
 
               <Card className="bg-gradient-card border-border/50">
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-3">Do you offer enterprise training?</h3>
+                  <h3 className="text-lg font-semibold mb-3">Do you offer Awareness enterprise training?</h3>
                   <p className="text-muted-foreground">
                     Yes, we provide customized enterprise training solutions for organizations of all sizes. 
                     Our enterprise packages include on-site training, custom curriculum development, and 
@@ -259,7 +250,7 @@ const Contact = () => {
               </Card>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );

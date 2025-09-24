@@ -47,9 +47,9 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="outline" size="sm" className="border-primary/50 hover:bg-primary/10">
+            {/* <Button variant="outline" size="sm" className="border-primary/50 hover:bg-primary/10">
               Get Started
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile menu button */}
@@ -86,9 +86,9 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button variant="outline" size="sm" className="w-fit border-primary/50 hover:bg-primary/10">
+              {/* <Button variant="outline" size="sm" className="w-fit border-primary/50 hover:bg-primary/10">
                 Get Started
-              </Button>
+              </Button> */}
             </div>
           </div>
         )}

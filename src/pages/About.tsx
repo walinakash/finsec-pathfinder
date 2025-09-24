@@ -25,8 +25,8 @@ const values = [
   },
   {
     icon: Globe2,
-    title: "Global Impact",
-    description: "Making cybersecurity accessible and understandable for organizations worldwide."
+    title: "Impact",
+    description: "Making cybersecurity accessible and understandable for organizations in Nigeria."
   },
   {
     icon: Heart,
@@ -38,13 +38,13 @@ const values = [
 const team = [
   {
     name: "Muhammad Kabir Ahmad",
-    role: "Chief Security Officer",
+    role: "Cyber Security Advocate",
     bio: "15+ years in cybersecurity with expertise in enterprise security architecture and threat intelligence."
   },
-  {
-    name: "Michael Rodriguez",
-    role: "Head of Education",
-    bio: "Former CISO with a passion for teaching cybersecurity best practices to the next generation."
+   {
+    name: "Muhammad Nibras Abubakar",
+    role: "Training Coordinator",
+    bio: "15+ years in cybersecurity with expertise in enterprise security architecture and threat intelligence."
   },
   {
     name: "Dr. Emily Watson",
@@ -75,7 +75,7 @@ const About = () => {
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 We're on a mission to make cybersecurity accessible, understandable, and actionable 
-                for organizations and individuals worldwide.
+                for organizations and individuals in Nigeria.
               </p>
             </div>
           </div>
@@ -183,7 +183,7 @@ const About = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-gradient-dark">
+        {/* <section className="py-20 bg-gradient-dark">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent">
@@ -213,7 +213,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );
