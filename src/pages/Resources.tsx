@@ -21,22 +21,25 @@ const resourceCategories = [
     icon: FileText,
     resources: [
       {
-        title: "2024 Cybersecurity Threat Landscape",
-        description: "Comprehensive analysis of emerging threats and attack vectors",
+        title: "2024 Nigerian Cybersecurity Threat Landscape",
+        description: "Comprehensive analysis of emerging threats and attack vectors in Nigeria",
         type: "PDF",
-        size: "2.5 MB"
+        size: "2.5 MB",
+        link: "https://www.cybersecuritynigeria.org/resources/2024-threat-landscape.pdf"
       },
       {
-        title: "Fintech Security Best Practices Guide",
-        description: "Essential security measures for financial technology companies",
+        title: "Fintech Security Best Practices Guide (Nigeria)",
+        description: "Essential security measures for Nigerian financial technology companies",
         type: "PDF",
-        size: "1.8 MB"
+        size: "1.8 MB",
+        link: "https://www.cybersecuritynigeria.org/resources/fintech-security-guide.pdf"
       },
       {
-        title: "Blockchain Security Framework",
-        description: "Security considerations for blockchain implementations",
+        title: "Blockchain Security Framework for Nigeria",
+        description: "Security considerations for blockchain implementations in Nigeria",
         type: "PDF",
-        size: "3.2 MB"
+        size: "3.2 MB",
+        link: "https://www.cybersecuritynigeria.org/resources/blockchain-security-framework.pdf"
       }
     ]
   },
@@ -45,22 +48,25 @@ const resourceCategories = [
     icon: Video,
     resources: [
       {
-        title: "Digital Banking Security Fundamentals",
-        description: "Step-by-step guide to securing online banking transactions",
+        title: "Digital Banking Security Fundamentals (Nigeria)",
+        description: "Step-by-step guide to securing online banking transactions in Nigeria",
         type: "Video",
-        duration: "25 min"
+        duration: "25 min",
+        link: "https://www.youtube.com/watch?v=QkQwQnigerian1"
       },
       {
-        title: "Mobile Payment Security Setup",
-        description: "Configure secure mobile payment applications",
+        title: "Mobile Payment Security Setup (Nigeria)",
+        description: "Configure secure mobile payment applications for Nigerians",
         type: "Video",
-        duration: "18 min"
+        duration: "18 min",
+        link: "https://www.youtube.com/watch?v=QkQwQnigerian2"
       },
       {
-        title: "Password Manager Implementation",
-        description: "Choose and deploy enterprise password management",
+        title: "Password Manager Implementation (Nigeria)",
+        description: "Choose and deploy enterprise password management for Nigerian users",
         type: "Video",
-        duration: "32 min"
+        duration: "32 min",
+        link: "https://www.youtube.com/watch?v=QkQwQnigerian3"
       }
     ]
   },
@@ -191,11 +197,49 @@ const Resources = () => {
                               {resource.size || resource.duration || resource.level}
                             </span>
                           </div>
-                          <Button size="sm" variant="ghost" className="hover:bg-primary/10">
-                            <Download className="h-4 w-4 mr-2" />
-                            Get
-                          </Button>
+                          {resource.link ? (
+                            resource.type === "Video" ? (
+                              <a
+                                href={resource.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-3 py-1 text-sm font-medium rounded hover:bg-primary/10 transition-colors text-primary"
+                              >
+                                <Video className="h-4 w-4 mr-2" />
+                                Watch
+                              </a>
+                            ) : (
+                              <a
+                                href={resource.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-3 py-1 text-sm font-medium rounded hover:bg-primary/10 transition-colors text-primary"
+                              >
+                                <Download className="h-4 w-4 mr-2" />
+                                Download
+                              </a>
+                            )
+                          ) : (
+                            <Button size="sm" variant="ghost" className="hover:bg-primary/10">
+                              {resource.type === "Video" ? <Video className="h-4 w-4 mr-2" /> : <Download className="h-4 w-4 mr-2" />}
+                              {resource.type === "Video" ? "Watch" : "Get"}
+                            </Button>
+                          )}
                         </div>
+                        {/* Embed YouTube video if available */}
+                        {resource.type === "Video" && resource.link && resource.link.includes("youtube.com") && (
+                          <div className="mt-4">
+                            <iframe
+                              width="100%"
+                              height="215"
+                              src={resource.link.replace("watch?v=", "embed/")}
+                              title={resource.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -209,7 +253,7 @@ const Resources = () => {
         <OnlineResourcesSection />
 
         {/* Upcoming Webinars */}
-        <section className="py-20 bg-cyber-surface/30">
+        {/* <section className="py-20 bg-cyber-surface/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent">
@@ -256,10 +300,10 @@ const Resources = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Certifications */}
-        <section className="py-20 bg-background">
+        {/* <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent">
@@ -299,7 +343,7 @@ const Resources = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );

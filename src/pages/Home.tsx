@@ -336,7 +336,7 @@ const Home = () => {
                   CyberGuard
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  Leading cybersecurity education and awareness platform, empowering organizations worldwide.
+                  Leading cybersecurity education and awareness platform, empowering organizations in Nigeria.
                 </p>
               </div>
               <div>
@@ -344,8 +344,8 @@ const Home = () => {
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <div>About Us</div>
                   <div>Resources</div>
-                  <div>Training Programs</div>
-                  <div>Certifications</div>
+                  <div>Articles</div>
+                  <div>Contact us</div>
                 </div>
               </div>
               <div>
@@ -370,7 +370,7 @@ const Home = () => {
                   </div>
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2" />
-                    Kaduna, NG
+                    Abuja, Nigeria
                   </div>
                 </div>
               </div>
