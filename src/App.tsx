@@ -13,6 +13,7 @@ import PhishingAttacks from "./pages/articles/PhishingAttacks";
 import DataProtection from "./pages/articles/DataProtection";
 import ArticlePage from "./pages/ArticlePage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
+import Quizz from "./pages/Quizz";
 
 const queryClient = new QueryClient();
 
@@ -31,7 +32,8 @@ const App = () => (
           <Route path="/articles/phishing-attacks" element={<PhishingAttacks />} />
           <Route path="/articles/data-protection" element={<DataProtection />} />
           <Route path="/articles" element={<ArticlePage />} />
-          <Route path="/articles/:id" element={<ArticleDetailPage />} />
+            <Route path="/articles/:id" element={<ArticleDetailPage />} />
+            <Route path="/quizz" element={<Quizz />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
