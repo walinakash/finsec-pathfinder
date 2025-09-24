@@ -245,6 +245,9 @@ const Quizz = () => {
     setSubmitted(false);
   };
 
+  const percent = Math.round(((currentModule + (submitted && showQuiz ? 1 : 0)) / modules.length) * 100);
+  const isComplete = currentModule === modules.length - 1 && submitted && showQuiz;
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -257,6 +260,15 @@ const Quizz = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent">
               Learn & Test Your Knowledge
             </h1>
+            <div className="w-full max-w-xl mx-auto mb-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-muted-foreground">Module {Math.min(currentModule + 1, modules.length)} of {modules.length}</span>
+                <span className="text-sm font-medium text-primary">{percent}% Complete</span>
+              </div>
+              <div className="w-full h-3 bg-border rounded-full overflow-hidden">
+                <div className="h-3 bg-gradient-cyber" style={{ width: `${percent}%` }}></div>
+              </div>
+            </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Go through each module to learn cybersecurity basics, then take a quiz to test your understanding.
             </p>
@@ -264,66 +276,80 @@ const Quizz = () => {
         </section>
         <section className="py-10">
           <div className="container mx-auto px-4 max-w-2xl">
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle>{modules[currentModule].title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="prose prose-lg mb-6">{modules[currentModule].content}</div>
-                {!showQuiz ? (
-                  <button
-                    className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-glow"
-                    onClick={() => setShowQuiz(true)}
-                  >
-                    Take Quiz
-                  </button>
-                ) : (
-                  <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-                    {modules[currentModule].quiz.questions.map((q, qIdx) => (
-                      <div key={qIdx} className="mb-6">
-                        <div className="font-semibold mb-2">{q.question}</div>
-                        {q.options.map((opt, optIdx) => (
-                          <label key={optIdx} className="block mb-1">
-                            <input
-                              type="radio"
-                              name={`q${qIdx}`}
-                              value={optIdx}
-                              checked={answers[qIdx] === optIdx}
-                              onChange={() => handleOptionChange(qIdx, optIdx)}
-                              disabled={submitted}
-                            />
-                            <span className="ml-2">{opt}</span>
-                          </label>
-                        ))}
-                        {submitted && (
-                          <div className={answers[qIdx] === q.answer ? "text-green-600" : "text-red-600"}>
-                            {answers[qIdx] === q.answer ? "Correct!" : "Incorrect."}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                    {!submitted ? (
-                      <button
-                        type="submit"
-                        className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-glow"
-                      >
-                        Submit Answers
-                      </button>
-                    ) : (
-                      <div className="mt-4">
+            {!isComplete ? (
+              <Card className="mb-8">
+                <CardHeader>
+                  <CardTitle>{modules[currentModule].title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="prose prose-lg mb-6">{modules[currentModule].content}</div>
+                  {!showQuiz ? (
+                    <button
+                      className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-glow"
+                      onClick={() => setShowQuiz(true)}
+                    >
+                      Take Quiz
+                    </button>
+                  ) : (
+                    <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
+                      {modules[currentModule].quiz.questions.map((q, qIdx) => (
+                        <div key={qIdx} className="mb-6">
+                          <div className="font-semibold mb-2">{q.question}</div>
+                          {q.options.map((opt, optIdx) => (
+                            <label key={optIdx} className="block mb-1">
+                              <input
+                                type="radio"
+                                name={`q${qIdx}`}
+                                value={optIdx}
+                                checked={answers[qIdx] === optIdx}
+                                onChange={() => handleOptionChange(qIdx, optIdx)}
+                                disabled={submitted}
+                              />
+                              <span className="ml-2">{opt}</span>
+                            </label>
+                          ))}
+                          {submitted && (
+                            <div className={answers[qIdx] === q.answer ? "text-green-600" : "text-red-600"}>
+                              {answers[qIdx] === q.answer ? "Correct!" : "Incorrect."}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                      {!submitted ? (
                         <button
+                          type="submit"
                           className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-glow"
-                          onClick={handleNextModule}
-                          disabled={currentModule === modules.length - 1}
                         >
-                          {currentModule === modules.length - 1 ? "Quiz Complete" : "Next Module"}
+                          Submit Answers
                         </button>
-                      </div>
-                    )}
-                  </form>
-                )}
-              </CardContent>
-            </Card>
+                      ) : (
+                        <div className="mt-4">
+                          <button
+                            className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-glow"
+                            onClick={handleNextModule}
+                            disabled={currentModule === modules.length - 1}
+                          >
+                            {currentModule === modules.length - 1 ? "Quiz Complete" : "Next Module"}
+                          </button>
+                        </div>
+                      )}
+                    </form>
+                  )}
+                </CardContent>
+              </Card>
+            ) : (
+              <div className="text-center py-20">
+                <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent animate-pulse">
+                  🎉 Congratulations, Cyber Champ! 🎉
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  You have completed all modules and quizzes. Your awareness and skills make you a true cybersecurity champion for Nigeria!
+                </p>
+                <div className="inline-block px-8 py-4 rounded-lg bg-gradient-cyber shadow-glow-cyber text-white text-2xl font-bold animate-bounce">
+                  🏆 You’re a Cybersecurity Hero! 🏆
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </main>
