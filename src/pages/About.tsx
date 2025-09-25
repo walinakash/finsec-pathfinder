@@ -36,26 +36,26 @@ const values = [
 ];
 
 const team = [
-  {
-    name: "Muhammad Kabir Ahmad",
-    role: "Cyber Security Advocate",
-    bio: "15+ years in cybersecurity with expertise in enterprise security architecture and threat intelligence."
-  },
-   {
-    name: "Muhammad Nibras Abubakar",
-    role: "Training Coordinator",
-    bio: "15+ years in cybersecurity with expertise in enterprise security architecture and threat intelligence."
-  },
-  {
-    name: "Dr. Emily Watson",
-    role: "Research Director",
-    bio: "PhD in Computer Science, specializing in blockchain security and fintech protection strategies."
-  },
-  {
-    name: "James Thompson",
-    role: "Training Coordinator",
-    bio: "Certified ethical hacker and security consultant with expertise in hands-on security training."
-  }
+  // {
+  //   name: "Muhammad Kabir Ahmad",
+  //   role: "Cyber Security Advocate",
+  //   bio: "15+ years in cybersecurity with expertise in enterprise security architecture and threat intelligence."
+  // },
+  //  {
+  //   name: "Muhammad Nibras Abubakar",
+  //   role: "Training Coordinator",
+  //   bio: "15+ years in cybersecurity with expertise in enterprise security architecture and threat intelligence."
+  // },
+  // {
+  //   name: "Dr. Emily Watson",
+  //   role: "Research Director",
+  //   bio: "PhD in Computer Science, specializing in blockchain security and fintech protection strategies."
+  // },
+  // {
+  //   name: "James Thompson",
+  //   role: "Training Coordinator",
+  //   bio: "Certified ethical hacker and security consultant with expertise in hands-on security training."
+  // }
 ];
 
 const About = () => {
@@ -154,7 +154,7 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 bg-background">
+        {/* <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent">
@@ -180,7 +180,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Stats Section */}
         {/* <section className="py-20 bg-gradient-dark">

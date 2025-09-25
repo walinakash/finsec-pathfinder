@@ -156,6 +156,48 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Fintech Cyber Threats Section */}
+        <section className="py-20 bg-gradient-dark">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">
+                Fintech Cyber Threats
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-cyber bg-clip-text text-transparent">
+                Protecting Nigeria's Fintech Sector
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Nigerian fintech companies face unique cyber threats. Learn about common risks and how to mitigate them to keep your finances safe.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="bg-gradient-card border-border/50">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-bold mb-4 text-primary">Common Fintech Cyber Threats</h3>
+                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                    <li><strong>Phishing & Social Engineering:</strong> Fake emails or calls trick users into revealing banking details or OTPs.</li>
+                    <li><strong>Account Takeover:</strong> Hackers use stolen credentials to access user accounts and steal funds.</li>
+                    <li><strong>Mobile App Malware:</strong> Malicious apps mimic real fintech apps to steal login info.</li>
+                    <li><strong>Ransomware Attacks:</strong> Criminals lock company data and demand payment for release.</li>
+                    <li><strong>API Vulnerabilities:</strong> Weak APIs can expose sensitive financial data to attackers.</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className="bg-gradient-card border-border/50">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-bold mb-4 text-primary">Mitigation Procedures</h3>
+                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                    <li><strong>Multi-Factor Authentication (MFA):</strong> Require users to verify identity with OTPs or biometrics.</li>
+                    <li><strong>Regular Security Audits:</strong> Test systems for vulnerabilities and fix issues quickly.</li>
+                    <li><strong>Employee Training:</strong> Teach staff to spot phishing and follow security best practices.</li>
+                    <li><strong>Secure App Development:</strong> Use encryption and secure coding for all fintech apps and APIs.</li>
+                    <li><strong>Incident Response Plan:</strong> Prepare for attacks with a clear plan to contain and recover quickly.</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
         {/* Articles Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
@@ -170,7 +212,6 @@ const Home = () => {
                 Stay informed with the latest insights from cybersecurity experts and industry leaders.
               </p>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="bg-gradient-card border-border/50 hover:border-primary/30 transition-all duration-300 group">
                 <CardContent className="p-6">
@@ -196,7 +237,6 @@ const Home = () => {
                   </Link>
                 </CardContent>
               </Card>
-
               <Card className="bg-gradient-card border-border/50 hover:border-primary/30 transition-all duration-300 group">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
@@ -221,7 +261,6 @@ const Home = () => {
                   </Link>
                 </CardContent>
               </Card>
-
               <Card className="bg-gradient-card border-border/50 hover:border-primary/30 transition-all duration-300 group">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
@@ -296,7 +335,7 @@ const Home = () => {
                   <div className="inline-flex p-4 rounded-lg bg-gradient-cyber shadow-glow-cyber mb-6 group-hover:shadow-glow-purple transition-all duration-300">
                     <Globe className="h-8 w-8 text-primary-foreground" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4">Global Awareness</h3>
+                  <h3 className="text-xl font-bold mb-4">Awareness</h3>
                   <p className="text-muted-foreground">
                     Your location is not a barrier, get access to our cyber security awareness, news and articles wherever you are. 
                   </p>
